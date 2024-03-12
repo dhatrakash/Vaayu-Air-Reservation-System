@@ -1,0 +1,522 @@
+{
+	"info": {
+		"_postman_id": "d2c58a77-5409-4689-bdce-273e222e144d",
+		"name": "VaayuAirlineReservationSystem",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Cancel Flight",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/admin/cancel_flight/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"admin",
+								"cancel_flight",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Airline",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\" : 1,\r\n    \"departureTime\" : \"2023-03-24 12:12:12\",\r\n    \"arrivalTime\" : \"2023-03-24 05:12:12\",\r\n    \"departureDate\": \"2023-03-24\",\r\n    \"arrivalDate\" : \"2023-03-24\"  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/admin/update_airline",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"admin",
+								"update_airline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Flights",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/admin/get_flights",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"admin",
+								"get_flights"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/admin/get_bookings/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"admin",
+								"get_bookings",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Passenger",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/admin/passenger_list/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"admin",
+								"passenger_list",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Super Admin",
+			"item": [
+				{
+					"name": "Get Airline Name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"airlineName\": \"Vistara\",\r\n    \"airlineNo\": \"A12345\",\r\n    \"departureDate\": \"2023-03-25\",\r\n    \"arrivalDate\" : \"2023-03-25\",\r\n    \"fromCity\" : \"Mumbai\",\r\n    \"toCity\" : \"Delhi\",\r\n    \"departureTime\" : \"2023-03-25 12:12:12\",\r\n    \"arrivalTime\" : \"2023-03-25 03:12:12\",\r\n    \"capacity\" : 200,\r\n    \"availableSeats\" : 150,\r\n    \"economyFare\" : 1500,\r\n    \"businessFare\" : 3000\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/superadmin/airline_names",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"superadmin",
+								"airline_names"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Airline",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoiYWQxQGdtYWlsLmNvbSIsImV4cCI6MTY3Nzc3MTU4NiwiaWF0IjoxNjc3Njg1MTg2fQ.RkmA-tDWnfPuCrHkaV9-6aGwmUYMIkcxJOc9pDW_SS8",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"airlineName\": \"SpiceJdet\",\r\n    \"airlineNo\": \"B12345\",\r\n    \"departureDate\": \"2023-03-25\",\r\n    \"arrivalDate\" : \"2023-03-25\",\r\n    \"fromCity\" : \"Delhi\",\r\n    \"toCity\" : \"Karnataka\",\r\n    \"departureTime\" : \"2023-03-25 12:12:12\",\r\n    \"arrivalTime\" : \"2023-03-25 08:12:12\",\r\n    \"capacity\" : 200,\r\n    \"availableSeats\" : 150,\r\n    \"economyFare\" : 2500,\r\n    \"businessFare\" : 4500\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/superadmin/add_airline",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"superadmin",
+								"add_airline"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Chetan\",\r\n        \"lastName\": \"Sonawane\",\r\n        \"email\": \"cs@gmail.com\",\r\n        \"password\": \"chetan\",\r\n        \"mobileNo\": \"8624239854\",\r\n        \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/superadmin/add_admin",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"superadmin",
+								"add_admin"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add City",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"cityNames\": [\"Delhi\", \"Kasur\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/superadmin/add_city",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"superadmin",
+								"add_city"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User",
+			"item": [
+				{
+					"name": "Get User",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/user/get_user/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"user",
+								"get_user",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibml0YUBnbWFpbC5jb20iLCJleHAiOjE2Nzc3NzI2NDMsImlhdCI6MTY3NzY4NjI0M30.24qZ8qhJ-IMa9msIDR2s_mAYn0xLBmifo1sqMGz2ML4",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"email\": \"abhi@gmail.com\",\r\n    \"password\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"login"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign Up",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJuYW1lIjoibml0YUBnbWFpbC5jb20iLCJleHAiOjE2Nzc2ODk2NjQsImlhdCI6MTY3NzY4OTYwNH0.h1FFMqOIIxyk1FpLDxSWkR2quj_ktJ8SM36h0HPn7SQ",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Neha\",\r\n    \"lastName\": \"Singh\",\r\n    \"email\": \"neha@gmail.com\",\r\n    \"password\": \"neha\",\r\n    \"mobileNo\": \"9558412665\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/user/signup",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"user",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \r\n        \"firstName\": \"Aradhya\",\r\n        \"lastName\": \"Gudhade\",\r\n        \"email\": \"a@gmail.com\",\r\n        \"password\": \"aaru\",\r\n        \"mobileNo\": \"8992471258\",\r\n        \"status\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/user/edit_profile/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"user",
+								"edit_profile",
+								"8"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Customer/post_feedback",
+			"item": [
+				{
+					"name": "Search Flight",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/customer/search_flight/2023-03-24?fromCity=Mumbai&toCity=Delhi",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"customer",
+								"search_flight",
+								"2023-03-24"
+							],
+							"query": [
+								{
+									"key": "fromCity",
+									"value": "Mumbai"
+								},
+								{
+									"key": "toCity",
+									"value": "Delhi"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Bookings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/customer/get_userbookings/8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"customer",
+								"get_userbookings",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": ""
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cities",
+			"item": [
+				{
+					"name": "Get Cities",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://localhost:9090/cities",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"cities"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
